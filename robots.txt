@@ -1,0 +1,9 @@
+# Preview of the Dublin Plaza Dental site, served under /dublinplazadental/.
+# Crawlers only read robots.txt at the domain root (agentiksystems.ai/robots.txt, managed in Wix).
+# This copy documents intent; every page also carries <meta name="robots" content="noindex, nofollow">.
+User-agent: *
+Disallow: /dublinplazadental/
+
+# When the owner decides to index, replace the Disallow line with:
+# Allow: /dublinplazadental/
+# Sitemap: https://agentiksystems.ai/dublinplazadental/sitemap.xml
