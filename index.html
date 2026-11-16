@@ -12,17 +12,18 @@
 <meta name="theme-color" content="#f8f6f0">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/cormorant-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/barlow-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="chat.css">
 <style>
-/* v5 hero rotation: restore natural color, soft type veil. */
-.hero>img{filter:saturate(1.05) contrast(1.03) brightness(1.01);object-position:50% 50%}
-.hero::after{background:linear-gradient(90deg,rgba(20,19,17,.40) 0%,rgba(20,19,17,.16) 30%,rgba(20,19,17,0) 56%),linear-gradient(0deg,rgba(20,19,17,.44) 0%,rgba(20,19,17,.10) 26%,rgba(20,19,17,0) 48%)}
-.hero .tint{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(185,212,209,.05),rgba(40,30,20,.04) 40%,transparent 70%)}
-.hero[data-hero=consult]>img{object-position:50% 50%}
-.hero[data-hero=chair]>img{object-position:50% 50%}
-.hero[data-hero=scan]>img{object-position:50% 50%}
-.hero[data-hero=light]>img{object-position:50% 50%}
+/* v2: natural color, subtle left scrim only, focal crops so people stay in frame. */
+.hero>img{filter:saturate(1.05) contrast(1.03) brightness(1.01)}
+.hero::after{background:none}
+.hero .tint{display:none}
+.hero[data-hero=consult]>img{object-position:22% 42%}
+.hero[data-hero=chair]>img{object-position:50% 48%}
+.hero[data-hero=scan]>img{object-position:46% 50%}
+.hero[data-hero=light]>img{object-position:42% 72%}
 </style>
 <script src="hero-rotate.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dentist", "name": "Dublin Plaza Dental", "url": "https://www.desaidpd.com/", "telephone": "+1-925-833-9800", "email": "dublinplazadental@sbcglobal.net", "image": "https://agentiksystems.ai/dublinplazadental/images/og-image.jpg", "address": {"@type": "PostalAddress", "streetAddress": "7792 Dublin Boulevard", "addressLocality": "Dublin", "addressRegion": "CA", "postalCode": "94568", "addressCountry": "US"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"}], "foundingDate": "2003", "areaServed": "Tri-Valley, California", "employee": {"@type": "Person", "name": "Tejas S. Desai", "jobTitle": "Dentist", "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of California, San Francisco School of Dentistry"}, "memberOf": {"@type": "Organization", "name": "American Dental Association"}}}</script>

@@ -35,6 +35,15 @@
   }
 
   function pick() {
+    try {
+      var params = new URLSearchParams(global.location.search);
+      var q = params.get('hero');
+      if (q) {
+        for (var n = 0; n < HEROES.length; n++) {
+          if (HEROES[n].id === q) return HEROES[n];
+        }
+      }
+    } catch (ignore) {}
     var i, next;
     try {
       i = parseInt(global.localStorage.getItem(KEY), 10);

@@ -1,6 +1,7 @@
 /* Dublin Plaza Dental, full site draft v1. Fonts are self hosted WOFF2 subsets (SIL OFL). */
 @font-face{font-family:"Jost";src:url(fonts/jost-latin.woff2) format("woff2");font-weight:300 700;font-display:swap}
 @font-face{font-family:"Barlow";src:url(fonts/barlow-600-latin.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Cormorant";src:url(fonts/cormorant-600-latin.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
 @font-face{font-family:"Cormorant";src:url(fonts/cormorant-italic-latin.woff2) format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
 @font-face{font-family:"Inter";src:url(fonts/inter-500-latin.woff2) format("woff2");font-weight:500;font-display:swap}
 :root{
@@ -61,16 +62,21 @@ p+p{margin-top:14px}
 .hdr .tel:hover{text-decoration:underline;text-underline-offset:5px}
 
 /* Hero */
-.hero{position:relative;height:calc(100vh - var(--hdr));min-height:720px;max-height:900px;overflow:hidden;background:#cfd6d6;color:var(--white)}
+.hero{position:relative;height:calc(100vh - var(--hdr));min-height:min(720px, calc(100dvh - var(--hdr)));max-height:900px;overflow:hidden;background:#cfd6d6;color:var(--white)}
 .hero video,.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.02)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,19,17,.62) 0%,rgba(20,19,17,.28) 38%,rgba(20,19,17,0) 62%),linear-gradient(0deg,rgba(20,19,17,.5) 0%,rgba(20,19,17,0) 45%)}
-.hero .copy{position:absolute;left:clamp(20px,2.8vw,40px);bottom:clamp(36px,5.5vw,72px);z-index:2;max-width:min(900px,calc(100% - 2 * clamp(20px,2.8vw,40px)))}
-.hero h1{font-size:clamp(26px,1.15rem + 1.78vw,44px);font-weight:600;letter-spacing:.11em;line-height:1.12;text-wrap:balance;text-shadow:0 1px 18px rgba(0,0,0,.18)}
-.hero .sub{font-size:clamp(17px,0.85rem + 0.95vw,27px);margin-top:clamp(10px,1vw,16px);max-width:min(540px,100%);color:#f1eee8}
-.hero .sign{margin-top:clamp(14px,1.4vw,22px);font-family:"Inter",var(--sans);font-size:clamp(11px,0.5rem + 0.4vw,13px);font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,251,244,.96);line-height:1.2;text-shadow:0 1px 10px rgba(0,0,0,.5)}
-.hero .sign strong{display:block;font-family:var(--script);font-style:italic;font-weight:500;font-size:clamp(20px,1rem + 0.85vw,26px);letter-spacing:0;text-transform:none;color:#D8C29A;margin-top:6px;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.hero::after{content:"";position:absolute;inset:0;background:none}
+.hero .copy{position:absolute;left:clamp(20px,2.8vw,40px);bottom:clamp(36px,5.5vw,72px);z-index:2;width:fit-content;max-width:min(900px,calc(100% - 2 * clamp(20px,2.8vw,40px)))}
+.hero .copy::before{content:"";position:absolute;left:-180px;top:-160px;right:-100px;bottom:-180px;background:radial-gradient(ellipse 165% 48% at 50% 38%,rgba(20,19,17,.86) 0%,rgba(20,19,17,.70) 34%,rgba(20,19,17,.48) 52%,rgba(20,19,17,.18) 68%,rgba(20,19,17,0) 80%),radial-gradient(ellipse 85% 72% at 16% 72%,rgba(20,19,17,.88) 0%,rgba(20,19,17,.52) 40%,rgba(20,19,17,0) 70%);filter:blur(48px);pointer-events:none;z-index:-1}
+.hero h1{font-family:"Cormorant",Georgia,serif;font-style:normal;font-weight:600;font-size:clamp(28px,1.1rem + 2.4vw,52px);letter-spacing:.07em;line-height:1.12;text-transform:uppercase;text-wrap:balance;text-shadow:0 2px 20px rgba(0,0,0,.7),0 0 8px rgba(0,0,0,.45),0 1px 3px rgba(0,0,0,.6)}
+.hero .sub{font-size:clamp(17px,0.85rem + 0.95vw,27px);margin-top:clamp(10px,1vw,16px);max-width:min(540px,100%);color:#f7f4ee;text-shadow:0 2px 16px rgba(0,0,0,.75),0 1px 4px rgba(0,0,0,.55)}
+.hero .sign{margin-top:clamp(14px,1.4vw,22px);font-family:"Inter",var(--sans);font-size:clamp(11px,0.5rem + 0.4vw,13px);font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,251,244,.98);line-height:1.2;text-shadow:0 2px 14px rgba(0,0,0,.75),0 1px 3px rgba(0,0,0,.6)}
+.hero .sign strong{display:block;font-family:var(--script);font-style:italic;font-weight:500;font-size:clamp(20px,1rem + 0.85vw,26px);letter-spacing:0;text-transform:none;color:#D8C29A;margin-top:6px;text-shadow:0 2px 14px rgba(0,0,0,.7),0 1px 3px rgba(0,0,0,.5)}
+.hero .ctas .cta{text-shadow:0 1px 10px rgba(0,0,0,.55)}
 @media (min-width:1100px){
 .hero .copy{max-width:min(900px,calc(100% - 40px - 428px))}
+}
+@media (max-width:700px){
+.hero h1{white-space:normal}
 }
 .vctl{position:absolute;right:40px;top:28px;z-index:3;display:flex;align-items:center;gap:10px;background:rgba(20,19,17,.42);color:#fff;border:1px solid rgba(255,255,255,.5);font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:9px 14px;border-radius:30px;cursor:pointer}
 .vctl:hover{background:rgba(20,19,17,.65)}
@@ -368,7 +374,7 @@ form button{margin-top:34px;background:none;color:var(--paper);border:0;cursor:p
   .hdr .wrap{padding:0 20px}
   .sec{padding:72px 0}.sec.tight{padding:56px 0}
   .head{margin-bottom:40px}
-  .hero{height:calc(100svh - var(--hdr));min-height:560px;max-height:760px}
+  .hero{height:calc(100svh - var(--hdr));min-height:min(560px, calc(100svh - var(--hdr)));max-height:760px}
   .hero .copy{bottom:96px}
   .tiles,.tech,.cols.c3,.cols.c4{grid-template-columns:1fr}
   .tile p{min-height:0}
@@ -395,10 +401,13 @@ form button{margin-top:34px;background:none;color:var(--paper);border:0;cursor:p
 address{font-style:normal}
 .ftr .tbc{font-size:10px}
 @media (max-width:640px){
-  .hero::after{background:linear-gradient(0deg,rgba(20,19,17,.66) 0%,rgba(20,19,17,.38) 34%,rgba(20,19,17,0) 58%)!important}
-  .hero[data-hero=light]>img{object-position:40% 50%!important}
+  .hero::after{background:none!important}
+  .hero .copy::before{left:-28px;top:-28px;right:-24px;bottom:-28px;background:radial-gradient(ellipse 90% 90% at 20% 70%,rgba(20,19,17,.82) 0%,rgba(20,19,17,.5) 40%,rgba(20,19,17,.18) 68%,rgba(20,19,17,0) 84%)}
+  .hero[data-hero=light]>img{object-position:40% 72%!important}
+  .hero[data-hero=consult]>img{object-position:18% 42%!important}
+  .hero[data-hero=scan]>img{object-position:38% 50%!important}
+  .hero[data-hero=chair]>img{object-position:50% 48%!important}
 }
-@media (max-width:640px){ .hero[data-hero=consult]>img{object-position:17% 50%!important} }
 .index{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:1fr}
 @media (max-width:1024px){ .index{grid-auto-flow:row;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))} }
 @media (max-width:640px){ .index{grid-template-columns:1fr 1fr} .index a{border-right:1px solid var(--line)} .index a:nth-child(2n){border-right:0} }
